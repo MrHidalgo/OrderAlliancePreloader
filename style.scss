@@ -8,9 +8,18 @@ body {
   margin: 0;
   padding: 0;
 
+  font-family: "TT Norms", Arila, sans-serif;
   line-height: 1.2;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
+// TITLE
+// ===============
+// ===============
 .title {
   position: absolute;
 
@@ -24,12 +33,8 @@ body {
   width: 100%;
   height: 100%;
 
-  margin: 0;
-  padding: 0;
-
   font-size: 60px;
   font-weight: 100;
-  font-family: "TT Norms", Arila, sans-serif;
 
   text-align: center;
 
@@ -42,7 +47,7 @@ body {
     margin-bottom: 100px;
   }
 
-  @each $className, $step, $colorName in
+  @each $className, $delay, $colorName in
       (0, 0,      #0571b9),
       (1, 1.25,   #f490ad),
       (2, 2.5,    #14a8df),
@@ -56,11 +61,15 @@ body {
   {
     &-#{$className} {
       color: $colorName;
-      animation-delay: #{$step}s;
+      animation-delay: #{$delay}s;
     }
   }
 }
 
+
+// BLOCK
+// ===============
+// ===============
 .block {
   position: absolute;
 
@@ -75,19 +84,25 @@ body {
 
     margin-left: auto;
     margin-right: auto;
+
+    animation-delay: 12.5s;
+    animation-name: scale;
+    animation-duration: 0.05s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(1,1,1,1);
   }
 
-  @each $className, $color, $l, $r, $t, $b in
-      (0, #0571b9, 0,     auto, auto,   0),
-      (1, #f490ad, auto,  0,    auto,   110px),
-      (2, #14a8df, 110px, auto, 0,      auto),
-      (3, #f89c21, 0,     auto, 110px,  auto ),
-      (4, #c7202e, 110px, auto, auto,   110px),
-      (5, #addfea, 0,     auto, 0,      auto),
-      (6, #ffcb08, auto,  0,    110px,  auto),
-      (7, #ed1165, 0,     auto, auto,   110px),
-      (8, #6cc065, auto,  0,    0,      auto),
-      (9, #ab499b, auto,  0,    auto,   0)
+  @each $className, $color, $l, $r, $t, $b, $delay in
+      (0, #0571b9, 0,     auto, auto,   0,      0),
+      (1, #f490ad, auto,  0,    auto,   110px,  1.25),
+      (2, #14a8df, 110px, auto, 0,      auto,   2.5),
+      (3, #f89c21, 0,     auto, 110px,  auto,   3.75),
+      (4, #c7202e, 110px, auto, auto,   110px,  5),
+      (5, #addfea, 0,     auto, 0,      auto,   6.25),
+      (6, #ffcb08, auto,  0,    110px,  auto,   7.5),
+      (7, #ed1165, 0,     auto, auto,   110px,  8.75),
+      (8, #6cc065, auto,  0,    0,      auto,   10),
+      (9, #ab499b, auto,  0,    auto,   0,      11.25)
   {
     &-#{$className} {
       left: $l;
@@ -96,15 +111,73 @@ body {
       bottom: $b;
 
       background-color: $color;
+
+      animation-delay: #{$delay}s;
+    }
+  }
+
+  &-5,
+  &-8 {
+    width: 0;
+    height: 0;
+
+    background-color: transparent;
+  }
+  &-5 {
+    border-bottom: 110px solid #addfea;
+    border-left: 110px solid transparent;
+  }
+  &-8 {
+    border-bottom: 110px solid #6cc065;
+    border-right: 110px solid transparent;
+  }
+}
+
+
+// TEXT
+// ===============
+// ===============
+.text--wrap {
+  opacity: 0;
+  position: relative;
+
+  text-align: center;
+
+  animation-delay: 12.5s;
+  animation-duration: 0.05s !important;
+  animation-fill-mode: forwards;
+  animation-name: slideInUp;
+
+  p {
+    &:nth-child(1) {
+      margin-bottom: 10px;
+
+      color: #444444;
+      font-size: 70px;
+      font-weight: bold;
+    }
+    &:nth-child(2) {
+      color: #cccccc;
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: bold;
     }
   }
 }
 
 
+// ANIMATED
+// ===============
+// ===============
 .animated {
   animation-duration: 1s;
   animation-fill-mode: both;
 }
+
+
+// SLIDEINRIGHT
+// ===============
+// ===============
 @keyframes slideInRight {
   from {
     transform: translate3d(100%, 0, 0);
@@ -117,9 +190,63 @@ body {
     transform: translate3d(-100%, 0, 0);
   }
 }
-
 .slideInRight {
-  //animation-name: slideInRight;
+  animation-name: slideInRight;
   animation-duration: 2.25s;
   animation-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+
+// ROTATEIN
+// ===============
+// ===============
+@keyframes rotateIn {
+  from {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -300deg);
+    opacity: 0;
+  }
+
+  to {
+    transform-origin: center;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.rotateIn {
+  animation-name: rotateIn;
+  animation-duration: 1s;
+}
+
+
+// SCALE
+// ===============
+// ===============
+@keyframes scale {
+  from {
+    top: 0;
+    transform: scale(1);
+  }
+  to {
+    top: -80px;
+    transform: scale(0.65);
+  }
+}
+
+
+// SLIDEINUP
+// ===============
+// ===============
+@keyframes slideInUp {
+  from {
+    top: 0;
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    top: -150px;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }

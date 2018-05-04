@@ -5,7 +5,12 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: "TT Norms", Arila, sans-serif;
   line-height: 1.2; }
+
+p {
+  margin: 0;
+  padding: 0; }
 
 .title {
   position: absolute;
@@ -16,11 +21,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
   font-size: 60px;
   font-weight: 100;
-  font-family: "TT Norms", Arila, sans-serif;
   text-align: center; }
   .title--wrap {
     position: relative;
@@ -67,67 +69,111 @@ body {
     width: 330px;
     height: 440px;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    animation-delay: 12.5s;
+    animation-name: scale;
+    animation-duration: 0.05s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(1, 1, 1, 1); }
   .block-0 {
     left: 0;
     right: auto;
     top: auto;
     bottom: 0;
-    background-color: #0571b9; }
+    background-color: #0571b9;
+    animation-delay: 0s; }
   .block-1 {
     left: auto;
     right: 0;
     top: auto;
     bottom: 110px;
-    background-color: #f490ad; }
+    background-color: #f490ad;
+    animation-delay: 1.25s; }
   .block-2 {
     left: 110px;
     right: auto;
     top: 0;
     bottom: auto;
-    background-color: #14a8df; }
+    background-color: #14a8df;
+    animation-delay: 2.5s; }
   .block-3 {
     left: 0;
     right: auto;
     top: 110px;
     bottom: auto;
-    background-color: #f89c21; }
+    background-color: #f89c21;
+    animation-delay: 3.75s; }
   .block-4 {
     left: 110px;
     right: auto;
     top: auto;
     bottom: 110px;
-    background-color: #c7202e; }
+    background-color: #c7202e;
+    animation-delay: 5s; }
   .block-5 {
     left: 0;
     right: auto;
     top: 0;
     bottom: auto;
-    background-color: #addfea; }
+    background-color: #addfea;
+    animation-delay: 6.25s; }
   .block-6 {
     left: auto;
     right: 0;
     top: 110px;
     bottom: auto;
-    background-color: #ffcb08; }
+    background-color: #ffcb08;
+    animation-delay: 7.5s; }
   .block-7 {
     left: 0;
     right: auto;
     top: auto;
     bottom: 110px;
-    background-color: #ed1165; }
+    background-color: #ed1165;
+    animation-delay: 8.75s; }
   .block-8 {
     left: auto;
     right: 0;
     top: 0;
     bottom: auto;
-    background-color: #6cc065; }
+    background-color: #6cc065;
+    animation-delay: 10s; }
   .block-9 {
     left: auto;
     right: 0;
     top: auto;
     bottom: 0;
-    background-color: #ab499b; }
+    background-color: #ab499b;
+    animation-delay: 11.25s; }
+  .block-5, .block-8 {
+    width: 0;
+    height: 0;
+    background-color: transparent; }
+  .block-5 {
+    border-bottom: 110px solid #addfea;
+    border-left: 110px solid transparent; }
+  .block-8 {
+    border-bottom: 110px solid #6cc065;
+    border-right: 110px solid transparent; }
+
+.text--wrap {
+  opacity: 0;
+  position: relative;
+  text-align: center;
+  animation-delay: 12.5s;
+  animation-duration: 0.05s !important;
+  animation-fill-mode: forwards;
+  animation-name: slideInUp; }
+  .text--wrap p:nth-child(1) {
+    margin-bottom: 10px;
+    color: #444444;
+    font-size: 70px;
+    font-weight: bold; }
+  .text--wrap p:nth-child(2) {
+    color: #cccccc;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bold; }
 
 .animated {
   animation-duration: 1s;
@@ -142,7 +188,39 @@ body {
   to {
     transform: translate3d(-100%, 0, 0); } }
 .slideInRight {
+  animation-name: slideInRight;
   animation-duration: 2.25s;
   animation-timing-function: cubic-bezier(0, 0.9, 0, 0.9); }
+
+@keyframes rotateIn {
+  from {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -300deg);
+    opacity: 0; }
+  to {
+    transform-origin: center;
+    transform: translate3d(0, 0, 0);
+    opacity: 1; } }
+.rotateIn {
+  animation-name: rotateIn;
+  animation-duration: 1s; }
+
+@keyframes scale {
+  from {
+    top: 0;
+    transform: scale(1); }
+  to {
+    top: -80px;
+    transform: scale(0.65); } }
+@keyframes slideInUp {
+  from {
+    top: 0;
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+    visibility: visible; }
+  to {
+    top: -150px;
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
 
 /*# sourceMappingURL=style.css.map */
