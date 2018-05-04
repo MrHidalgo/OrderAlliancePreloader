@@ -39,23 +39,63 @@ body {
     height: 100px;
 
     margin-top: 140px;
+    margin-bottom: 100px;
   }
 
   @each $className, $step, $colorName in
-      (0, 0,    #0571b9),
-      (1, 1.25,  #f490ad),
+      (0, 0,      #0571b9),
+      (1, 1.25,   #f490ad),
       (2, 2.5,    #14a8df),
-      (3, 3.75,  #f89c21),
-      (4, 5,    #c7202e),
-      (5, 6.25,  #addfea),
+      (3, 3.75,   #f89c21),
+      (4, 5,      #c7202e),
+      (5, 6.25,   #addfea),
       (6, 7.5,    #ffcb08),
-      (7, 8.75, #ed1165),
-      (8, 10,   #6cc065),
-      (9, 11.25, #ab499b)
+      (7, 8.75,   #ed1165),
+      (8, 10,     #6cc065),
+      (9, 11.25,  #ab499b)
   {
     &-#{$className} {
       color: $colorName;
       animation-delay: #{$step}s;
+    }
+  }
+}
+
+.block {
+  position: absolute;
+
+  width: 110px;
+  height: 110px;
+
+  &--wrap {
+    position: relative;
+
+    width: 330px;
+    height: 440px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @each $className, $color, $l, $r, $t, $b in
+      (0, #0571b9, 0,     auto, auto,   0),
+      (1, #f490ad, auto,  0,    auto,   110px),
+      (2, #14a8df, 110px, auto, 0,      auto),
+      (3, #f89c21, 0,     auto, 110px,  auto ),
+      (4, #c7202e, 110px, auto, auto,   110px),
+      (5, #addfea, 0,     auto, 0,      auto),
+      (6, #ffcb08, auto,  0,    110px,  auto),
+      (7, #ed1165, 0,     auto, auto,   110px),
+      (8, #6cc065, auto,  0,    0,      auto),
+      (9, #ab499b, auto,  0,    auto,   0)
+  {
+    &-#{$className} {
+      left: $l;
+      right: $r;
+      top: $t;
+      bottom: $b;
+
+      background-color: $color;
     }
   }
 }
@@ -79,7 +119,7 @@ body {
 }
 
 .slideInRight {
-  animation-name: slideInRight;
+  //animation-name: slideInRight;
   animation-duration: 2.25s;
   animation-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
 }

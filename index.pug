@@ -8,14 +8,25 @@ html(lang="en")
     link(rel="stylesheet", href="style.css")
   body
 
+    -
+      var titleArr = [
+        "Квартиры",
+        "Застройщик",
+        "Коммерческая недвижимость",
+        "Инвестиции",
+        "Генподрядчик",
+        "Машиноместа",
+        "Земля",
+        "Проектирование",
+        "Таунхаусы",
+        "Новостройки"
+      ];
+
     .title--wrap
-      p.title.title-0.animated.slideInRight!= "Квартиры"
-      p.title.title-1.animated.slideInRight!= "Застройщик"
-      p.title.title-2.animated.slideInRight!= "Коммерческая недвижимость"
-      p.title.title-3.animated.slideInRight!= "Инвестиции"
-      p.title.title-4.animated.slideInRight!= "Генподрядчик"
-      p.title.title-5.animated.slideInRight!= "Машиноместа"
-      p.title.title-6.animated.slideInRight!= "Земля"
-      p.title.title-7.animated.slideInRight!= "Проектирование"
-      p.title.title-8.animated.slideInRight!= "Таунхаусы"
-      p.title.title-9.animated.slideInRight!= "Новостройки"
+      -for(var i = 0, len = titleArr.length; i < len; i++)
+        p.animated.slideInRight.title(class!="title-" + i)!= titleArr[i]
+
+    .block--wrap
+      -for(var i = 0, len = titleArr.length; i < len; i++)
+        .block(class="block-" + i)
+
