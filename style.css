@@ -81,6 +81,7 @@ p {
     top: auto;
     bottom: 0;
     background-color: #0571b9;
+    box-shadow: 0 0 100px 10px rgba(5, 113, 185, 0.35);
     animation-delay: 0s; }
   .block-1 {
     left: auto;
@@ -88,6 +89,7 @@ p {
     top: auto;
     bottom: 110px;
     background-color: #f490ad;
+    box-shadow: 0 0 100px 10px rgba(244, 144, 173, 0.35);
     animation-delay: 1.25s; }
   .block-2 {
     left: 110px;
@@ -95,6 +97,7 @@ p {
     top: 0;
     bottom: auto;
     background-color: #14a8df;
+    box-shadow: 0 0 100px 10px rgba(20, 168, 223, 0.35);
     animation-delay: 2.5s; }
   .block-3 {
     left: 0;
@@ -102,6 +105,7 @@ p {
     top: 110px;
     bottom: auto;
     background-color: #f89c21;
+    box-shadow: 0 0 100px 10px rgba(248, 156, 33, 0.35);
     animation-delay: 3.75s; }
   .block-4 {
     left: 110px;
@@ -109,6 +113,7 @@ p {
     top: auto;
     bottom: 110px;
     background-color: #c7202e;
+    box-shadow: 0 0 100px 10px rgba(199, 32, 46, 0.35);
     animation-delay: 5s; }
   .block-5 {
     left: 0;
@@ -116,6 +121,7 @@ p {
     top: 0;
     bottom: auto;
     background-color: #addfea;
+    box-shadow: 0 0 100px 10px rgba(173, 223, 234, 0.35);
     animation-delay: 6.25s; }
   .block-6 {
     left: auto;
@@ -123,6 +129,7 @@ p {
     top: 110px;
     bottom: auto;
     background-color: #ffcb08;
+    box-shadow: 0 0 100px 10px rgba(255, 203, 8, 0.35);
     animation-delay: 7.5s; }
   .block-7 {
     left: 0;
@@ -130,6 +137,7 @@ p {
     top: auto;
     bottom: 110px;
     background-color: #ed1165;
+    box-shadow: 0 0 100px 10px rgba(237, 17, 101, 0.35);
     animation-delay: 8.75s; }
   .block-8 {
     left: auto;
@@ -137,6 +145,7 @@ p {
     top: 0;
     bottom: auto;
     background-color: #6cc065;
+    box-shadow: 0 0 100px 10px rgba(108, 192, 101, 0.35);
     animation-delay: 10s; }
   .block-9 {
     left: auto;
@@ -144,11 +153,13 @@ p {
     top: auto;
     bottom: 0;
     background-color: #ab499b;
+    box-shadow: 0 0 100px 10px rgba(171, 73, 155, 0.35);
     animation-delay: 11.25s; }
   .block-5, .block-8 {
     width: 0;
     height: 0;
-    background-color: transparent; }
+    background-color: transparent;
+    box-shadow: none; }
   .block-5 {
     border-bottom: 110px solid #addfea;
     border-left: 110px solid transparent; }

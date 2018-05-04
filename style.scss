@@ -111,6 +111,7 @@ p {
       bottom: $b;
 
       background-color: $color;
+      box-shadow: 0 0 100px 10px rgba($color, 0.35);
 
       animation-delay: #{$delay}s;
     }
@@ -122,6 +123,7 @@ p {
     height: 0;
 
     background-color: transparent;
+    box-shadow: none
   }
   &-5 {
     border-bottom: 110px solid #addfea;
