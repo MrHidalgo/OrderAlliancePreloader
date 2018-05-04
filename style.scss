@@ -7,38 +7,56 @@ body {
 
   margin: 0;
   padding: 0;
+
+  line-height: 1.2;
 }
 
 .title {
   position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   top: 0;
   left: 0;
 
   width: 100%;
   height: 100%;
 
-  font-size: 50px;
-  font-weight: bold;
+  margin: 0;
+  padding: 0;
+
+  font-size: 60px;
+  font-weight: 100;
+  font-family: "TT Norms", Arila, sans-serif;
+
   text-align: center;
-  font-family: Aganè, Arila, sans-serif;
 
   &--wrap {
     position: relative;
+
+    height: 100px;
+
+    margin-top: 140px;
   }
-  &-0 {
-    animation-delay: 0s;
-  }
-  &-1 {
-    animation-delay: 3s;
-  }
-  &-2 {
-    animation-delay: 6s;
-  }
-  &-3 {
-    animation-delay: 9s;
-  }
-  &-4 {
-    animation-delay: 12s;
+
+  @each $className, $step, $colorName in
+      (0, 0,    #0571b9),
+      (1, 1.25,  #f490ad),
+      (2, 2.5,    #14a8df),
+      (3, 3.75,  #f89c21),
+      (4, 5,    #c7202e),
+      (5, 6.25,  #addfea),
+      (6, 7.5,    #ffcb08),
+      (7, 8.75, #ed1165),
+      (8, 10,   #6cc065),
+      (9, 11.25, #ab499b)
+  {
+    &-#{$className} {
+      color: $colorName;
+      animation-delay: #{$step}s;
+    }
   }
 }
 
@@ -49,19 +67,11 @@ body {
 }
 @keyframes slideInRight {
   from {
-    opacity: 0;
     transform: translate3d(100%, 0, 0);
-    //visibility: visible;
+    visibility: visible;
   }
-  48% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-  55% {
-    transform: translate3d(-40px, 0, 0);
-  }
-  90% {
-    opacity: 0;
+  50% {
+    transform: translate3d(-100px, 0, 0);
   }
   to {
     transform: translate3d(-100%, 0, 0);
@@ -70,5 +80,6 @@ body {
 
 .slideInRight {
   animation-name: slideInRight;
-  animation-duration: 3.5s;
+  animation-duration: 2.25s;
+  animation-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
 }

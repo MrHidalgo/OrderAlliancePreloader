@@ -1,34 +1,61 @@
-@charset "UTF-8";
 html,
 body {
   overflow-x: hidden;
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  line-height: 1.2; }
 
 .title {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  font-size: 50px;
-  font-weight: bold;
-  text-align: center;
-  font-family: Aganè, Arila, sans-serif; }
+  margin: 0;
+  padding: 0;
+  font-size: 60px;
+  font-weight: 100;
+  font-family: "TT Norms", Arila, sans-serif;
+  text-align: center; }
   .title--wrap {
-    position: relative; }
+    position: relative;
+    height: 100px;
+    margin-top: 140px; }
   .title-0 {
+    color: #0571b9;
     animation-delay: 0s; }
   .title-1 {
-    animation-delay: 3s; }
+    color: #f490ad;
+    animation-delay: 1.25s; }
   .title-2 {
-    animation-delay: 6s; }
+    color: #14a8df;
+    animation-delay: 2.5s; }
   .title-3 {
-    animation-delay: 9s; }
+    color: #f89c21;
+    animation-delay: 3.75s; }
   .title-4 {
-    animation-delay: 12s; }
+    color: #c7202e;
+    animation-delay: 5s; }
+  .title-5 {
+    color: #addfea;
+    animation-delay: 6.25s; }
+  .title-6 {
+    color: #ffcb08;
+    animation-delay: 7.5s; }
+  .title-7 {
+    color: #ed1165;
+    animation-delay: 8.75s; }
+  .title-8 {
+    color: #6cc065;
+    animation-delay: 10s; }
+  .title-9 {
+    color: #ab499b;
+    animation-delay: 11.25s; }
 
 .animated {
   animation-duration: 1s;
@@ -36,19 +63,15 @@ body {
 
 @keyframes slideInRight {
   from {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0); }
-  48% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0); }
-  55% {
-    transform: translate3d(-40px, 0, 0); }
-  90% {
-    opacity: 0; }
+    transform: translate3d(100%, 0, 0);
+    visibility: visible; }
+  50% {
+    transform: translate3d(-100px, 0, 0); }
   to {
     transform: translate3d(-100%, 0, 0); } }
 .slideInRight {
   animation-name: slideInRight;
-  animation-duration: 3.5s; }
+  animation-duration: 2.25s;
+  animation-timing-function: cubic-bezier(0, 0.9, 0, 0.9); }
 
 /*# sourceMappingURL=style.css.map */
