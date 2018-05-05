@@ -23,6 +23,9 @@ html(lang="en")
       ];
 
     .loader
+      -for(var i = 0, len = titleArr.length; i < len; i++)
+        .animated.loader--gradient(class="loader--gradient-" + i)
+
       .loader--title-wrap
         -for(var i = 0, len = titleArr.length; i < len; i++)
           p.animated.slideInRight.loader--title(class!="loader--title-" + i)!= titleArr[i]

@@ -21,6 +21,68 @@ p {
   width: 100%;
   height: 100%;
   background-color: #fff; }
+  .loader--gradient {
+    z-index: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation-duration: 0.9s !important;
+    animation-fill-mode: backwards !important;
+    animation-timing-function: ease-in-out;
+    animation-name: fadeIn; }
+    .loader--gradient-0 {
+      animation-delay: 0s;
+      background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(5, 113, 185, 0.25) 100%);
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(5, 113, 185, 0.25) 100%);
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(5, 113, 185, 0.25) 100%); }
+    .loader--gradient-1 {
+      animation-delay: 0.9s;
+      background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(244, 144, 173, 0.25) 100%);
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(244, 144, 173, 0.25) 100%);
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(244, 144, 173, 0.25) 100%); }
+    .loader--gradient-2 {
+      animation-delay: 1.8s;
+      background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(20, 168, 223, 0.25) 100%);
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(20, 168, 223, 0.25) 100%);
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(20, 168, 223, 0.25) 100%); }
+    .loader--gradient-3 {
+      animation-delay: 2.7s;
+      background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(248, 156, 33, 0.25) 100%);
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(248, 156, 33, 0.25) 100%);
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(248, 156, 33, 0.25) 100%); }
+    .loader--gradient-4 {
+      animation-delay: 3.6s;
+      background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(199, 32, 46, 0.25) 100%);
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(199, 32, 46, 0.25) 100%);
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(199, 32, 46, 0.25) 100%); }
+    .loader--gradient-5 {
+      animation-delay: 4.5s;
+      background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(173, 223, 234, 0.25) 100%);
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(173, 223, 234, 0.25) 100%);
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(173, 223, 234, 0.25) 100%); }
+    .loader--gradient-6 {
+      animation-delay: 5.4s;
+      background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(255, 203, 8, 0.25) 100%);
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(255, 203, 8, 0.25) 100%);
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(255, 203, 8, 0.25) 100%); }
+    .loader--gradient-7 {
+      animation-delay: 6.3s;
+      background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(237, 17, 101, 0.25) 100%);
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(237, 17, 101, 0.25) 100%);
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(237, 17, 101, 0.25) 100%); }
+    .loader--gradient-8 {
+      animation-delay: 7.2s;
+      background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(108, 192, 101, 0.25) 100%);
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(108, 192, 101, 0.25) 100%);
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(108, 192, 101, 0.25) 100%); }
+    .loader--gradient-9 {
+      animation-delay: 8.1s;
+      background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(171, 73, 155, 0.25) 100%);
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(171, 73, 155, 0.25) 100%);
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(171, 73, 155, 0.25) 100%); }
   .loader--title {
     position: absolute;
     display: flex;
@@ -34,6 +96,7 @@ p {
     font-weight: 100;
     text-align: center; }
     .loader--title-wrap {
+      z-index: 1;
       position: relative;
       height: 100px;
       margin-top: 140px;
@@ -73,14 +136,15 @@ p {
     width: 110px;
     height: 110px; }
     .loader--block-wrap {
+      z-index: 1;
       position: relative;
       width: 330px;
       height: 440px;
       margin-left: auto;
       margin-right: auto;
       animation-delay: 9.1s;
+      animation-duration: 0.2s !important;
       animation-name: scale;
-      animation-duration: 0s;
       animation-fill-mode: forwards;
       animation-timing-function: cubic-bezier(1, 1, 1, 1); }
     .loader--block-0 {
@@ -176,12 +240,13 @@ p {
       border-right: 110px solid transparent; }
   .loader--text-wrap {
     opacity: 0;
+    z-index: 1;
     position: relative;
     text-align: center;
     animation-delay: 9.1s;
-    animation-duration: 0s !important;
-    animation-fill-mode: forwards;
-    animation-name: slideInUp; }
+    animation-duration: 0.25s !important;
+    animation-name: slideInUp;
+    animation-fill-mode: forwards; }
     .loader--text-wrap p:nth-child(1) {
       margin-bottom: 10px;
       color: #444444;
@@ -197,6 +262,11 @@ p {
   animation-duration: 1s;
   animation-fill-mode: both; }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 @keyframes slideInRight {
   from {
     transform: translate3d(100%, 0, 0);
