@@ -218,28 +218,6 @@ p {
 }
 
 
-// ROTATEIN
-// ===============
-// ===============
-@keyframes rotateIn {
-  from {
-    transform-origin: center;
-    transform: rotate3d(0, 0, 1, -300deg);
-    opacity: 0;
-  }
-
-  to {
-    transform-origin: center;
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
-.rotateIn {
-  animation-name: rotateIn;
-  animation-duration: 0.2s;
-}
-
-
 // SCALE
 // ===============
 // ===============
@@ -270,4 +248,73 @@ p {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
+}
+
+
+// SLIDEINLEFT
+// ===============
+// ===============
+@mixin keyframesFunction($keyframesName, $initX, $initY, $step, $directionX, $directionY) {
+  @keyframes #{$keyframesName} {
+    from {
+      transform-origin: center;
+      transform: translate3d(#{$directionX}$initX, #{$directionY}$initY, 0);
+      visibility: visible;
+    }
+
+    @for $i from 1 through 9 {
+      #{$i * 10%} {
+
+        $x: 0;
+        $y: 0;
+
+        @if ($initX != 0) {
+          $x: #{$initX - ($i * $step)}
+        }
+        @if ($initY != 0) {
+          $y: #{$initY - ($i * $step)}
+        }
+
+        @if($i != 9) {
+          transform: translate3d(#{$directionX}$x, #{$directionY}$y, 0);
+        } @else {
+          transform: translate3d(#{$directionX}$x, #{$directionY}$y, 0) rotate(-200deg);
+        }
+      }
+    }
+
+    to {
+      transform-origin: center;
+      transform: translate3d(0, 0, 0) rotate(0deg);
+      opacity: 1;
+    }
+  }
+}
+
+@include keyframesFunction(slideInRotateBlock0, 1000px, 1000px, 100,  "-",  "");
+@include keyframesFunction(slideInRotateBlock1, 1000px, 1000px, 100,  "",   "");
+@include keyframesFunction(slideInRotateBlock2, 1000px, 0,      0,    "",   "");
+@include keyframesFunction(slideInRotateBlock3, 1000px, 1000px, 100,  "-",  "-");
+@include keyframesFunction(slideInRotateBlock4, 0,      1000px, 100,  "",   "");
+@include keyframesFunction(slideInRotateBlock5, 1000px, 1000px, 50,   "-",  "-");
+@include keyframesFunction(slideInRotateBlock6, 1000px, 0,      100,  "",   "");
+@include keyframesFunction(slideInRotateBlock7, 1000px, 1000px, 100,  "-",  "-");
+@include keyframesFunction(slideInRotateBlock8, 1000px, 1000px, 100,  "",   "-");
+@include keyframesFunction(slideInRotateBlock9, 1000px, 1000px, 100,  "",   "");
+
+
+.loader--block {
+  opacity: 0;
+  animation-duration: 0.15s;
+
+  &-0 {animation-name: slideInRotateBlock0;}
+  &-1 {animation-name: slideInRotateBlock1;}
+  &-2 {animation-name: slideInRotateBlock2;}
+  &-3 {animation-name: slideInRotateBlock3;}
+  &-4 {animation-name: slideInRotateBlock4;}
+  &-5 {animation-name: slideInRotateBlock5;}
+  &-6 {animation-name: slideInRotateBlock6;}
+  &-7 {animation-name: slideInRotateBlock7;}
+  &-8 {animation-name: slideInRotateBlock8;}
+  &-9 {animation-name: slideInRotateBlock9;}
 }
