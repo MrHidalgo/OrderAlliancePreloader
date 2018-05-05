@@ -22,14 +22,15 @@ html(lang="en")
         "Новостройки"
       ];
 
-    .title--wrap
-      -for(var i = 0, len = titleArr.length; i < len; i++)
-        p.animated.slideInRight.title(class!="title-" + i)!= titleArr[i]
+    .loader
+      .loader--title-wrap
+        -for(var i = 0, len = titleArr.length; i < len; i++)
+          p.animated.slideInRight.loader--title(class!="loader--title-" + i)!= titleArr[i]
 
-    .block--wrap
-      -for(var i = 0, len = titleArr.length; i < len; i++)
-        .animated.rotateIn.block(class="block-" + i)
+      .loader--block-wrap
+        -for(var i = 0, len = titleArr.length; i < len; i++)
+          .animated.rotateIn.loader--block(class="loader--block-" + i)
 
-    .text--wrap.animated
-      p!= "стройальянс"
-      p!= "группа компаний"
+      .loader--text-wrap.animated
+        p!= "стройальянс"
+        p!= "группа компаний"
