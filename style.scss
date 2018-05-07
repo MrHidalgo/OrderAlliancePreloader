@@ -100,15 +100,27 @@ p {
     font-weight: 100;
 
     text-align: center;
+    @media screen and (max-width: 991px) {
+      font-size: 30px;
+    }
+    @media screen and (max-width: 1199px) {
+      font-size: 45px;
+    }
 
     &-wrap {
       z-index: 1;
       position: relative;
 
-      height: 100px;
+      height: 80px;
 
-      margin-top: 140px;
-      margin-bottom: 100px;
+      padding-top: 115px;
+      padding-bottom: 100px;
+      @media screen and (max-width: 991px) {
+        height: 50px;
+
+        padding-top: 80px;
+        padding-bottom: 50px;
+      }
     }
 
     @each $className, $delay, $colorName in
@@ -135,11 +147,13 @@ p {
   // ===============
   // ===============
   &--block {
-
     position: absolute;
 
     width: 110px;
     height: 110px;
+    @media screen and (max-width: 991px) {
+      transform: scale(0.8);
+    }
 
     &-wrap {
       z-index: 1;
@@ -156,6 +170,9 @@ p {
       animation-name: scale;
       animation-fill-mode: forwards;
       animation-timing-function: cubic-bezier(1,1,1,1);
+      @media screen and (max-width: 991px) {
+        transform: scale(0.8);
+      }
     }
 
     @each $className, $color, $l, $r, $t, $b, $delay in
@@ -225,12 +242,18 @@ p {
         color: #444444;
         font-size: 70px;
         font-weight: bold;
+        @media screen and (max-width: 991px) {
+          font-size: 50px;
+        }
       }
       &:nth-child(2) {
         color: #cccccc;
         text-transform: uppercase;
         font-size: 30px;
         font-weight: bold;
+        @media screen and (max-width: 991px) {
+          font-size: 25px;
+        }
       }
     }
   }

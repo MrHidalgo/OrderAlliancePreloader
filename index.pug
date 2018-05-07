@@ -23,17 +23,18 @@ html(lang="en")
       ];
 
     .loader
-      -for(var i = 0, len = titleArr.length; i < len; i++)
-        .animated.loader--gradient(class="loader--gradient-" + i)
-
-      .loader--title-wrap
+      .loader--container
         -for(var i = 0, len = titleArr.length; i < len; i++)
-          p.animated.slideInRight.loader--title(class!="loader--title-" + i)!= titleArr[i]
+          .animated.loader--gradient(class="loader--gradient-" + i)
 
-      .loader--block-wrap
-        -for(var i = 0, len = titleArr.length; i < len; i++)
-          .animated.loader--block(class="loader--block-" + i)
+        .loader--title-wrap
+          -for(var i = 0, len = titleArr.length; i < len; i++)
+            p.animated.slideInRight.loader--title(class!="loader--title-" + i)!= titleArr[i]
 
-      .loader--text-wrap.animated
-        p!= "стройальянс"
-        p!= "группа компаний"
+        .loader--block-wrap
+          -for(var i = 0, len = titleArr.length; i < len; i++)
+            .animated.loader--block(class="loader--block-" + i)
+
+        .loader--text-wrap.animated
+          p!= "стройальянс"
+          p!= "группа компаний"
